@@ -1,3 +1,4 @@
+PROBLEM 1
 Part (a)
 Which of the following are acceptable behaviors in solving homeworks/projects?:
 1. Looking up information relevant to the course online.
@@ -16,5 +17,24 @@ What is the late submission policy?
 
 Part(d):
 After making a late submission by pushing your code to Gihub you should...
+2. Complete the normal homework submission form.
+4. Start the next assignment sooner.
+
+PROBLEM 2
+Part (a):
+Which of the following git user interfaces are accepted and supported in this course?
+1. Git Bash (Windows)
+3. Terminal (Mac or Linux)
+
+Part (b):
+Provide the appropriate git command to perform the following operations:
+1. Stage an untracked file to be committed. The file is called 'hw1q2b.cpp'.
+git add <file>
+2. Display the details of the last three commits in the repository.
+git log -3
+
+Part (c)
+Let's say you staged three files to be committed. Then, you ran the following command: "git commit" What will git do?
+Git will commit all three files
 
 
