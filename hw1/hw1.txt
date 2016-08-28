@@ -1,0 +1,20 @@
+Part (a)
+Which of the following are acceptable behaviors in solving homeworks/projects?:
+1. Looking up information relevant to the course online.
+4. Asking the course staff for help.
+8. Copying test cases from my classmates or Piazza when test cases are not graded.
+
+Part (b):
+Which of the following are recommended ways of writing code?
+1. gedit
+2. emacs
+4. sublime
+
+Part(c):
+What is the late submission policy?
+2. Each student has 3 late days of which only 1 can be used per HW.
+
+Part(d):
+After making a late submission by pushing your code to Gihub you should...
+
+
