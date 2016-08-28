@@ -1,5 +1,5 @@
 # CS 104 Student Repository
 
-- **Name**: Tommy Trojan
-- **USC ID**: 1234567890
-- **Email**: ttrojan@usc.edu
+- **Name**: Ryan Espiritu 
+- **USC ID**: 9340109175
+- **Email**: raespiri@usc.edu
