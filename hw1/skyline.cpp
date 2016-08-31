@@ -124,6 +124,9 @@ int main(int argc, char* argv[])
 	  		output << endl;
 	  	}
   	  }
+  	  else {
+  	  	output << "Error - incorrect command" << endl;
+  	  }
   }
   //clean-up
   for(int i = 0; i < constructionspots; ++i) 
