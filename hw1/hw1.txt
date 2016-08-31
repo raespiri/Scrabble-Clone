@@ -10,6 +10,7 @@ Which of the following are recommended ways of writing code?
 1. gedit
 2. emacs
 4. sublime
+But you can essentially use anything as long as it compiles correctly with the VM compiler, as that's the environment which our code is graded on.
 
 Part(c):
 What is the late submission policy?
