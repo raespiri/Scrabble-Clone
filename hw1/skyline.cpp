@@ -132,6 +132,6 @@ int main(int argc, char* argv[])
   }
    delete [] skyline;
    delete [] buildingheights;
-   
+
   return 0;
 }
