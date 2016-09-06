@@ -41,7 +41,8 @@ int main(int argc, char* argv[])
 		  ss >> x;
 		  ss >> y;
 		  ss >> c;
-		  if (ss.fail() || skyline[x] != NULL || x < 0 || x >= constructionspots) {
+		  string extra; //variable to check for incorrect command
+		  if (ss.fail() || skyline[x] != NULL || x < 0 || x >= constructionspots || ss >> extra) {
 			  output << "Error - incorrect command" << endl;
 		  }
 		  else {
@@ -60,7 +61,8 @@ int main(int argc, char* argv[])
 		ss >> x;
 		ss >> y;
 		ss >> c;
-		if (ss.fail() || skyline[x] == NULL || x < 0 || x >= constructionspots) {
+		string extra; //variable to check for incorrect command
+		if (ss.fail() || skyline[x] == NULL || x < 0 || x >= constructionspots || ss >> extra) {
 			output << "Error - incorrect command" << endl;
 		}
 	  	else {
@@ -92,7 +94,8 @@ int main(int argc, char* argv[])
 	  else if (curr == "DEMOLISH") {
 	  	int x;
 		ss >> x;
-		if (ss.fail() || skyline[x] == NULL || x < 0 || x >= constructionspots) {
+		string extra; //variable to check for incorrect command
+		if (ss.fail() || skyline[x] == NULL || x < 0 || x >= constructionspots || ss >> extra) {
 			output << "Error - incorrect command" << endl;
 		}
 	  	else {
@@ -104,7 +107,7 @@ int main(int argc, char* argv[])
 	  else if (curr == "SKYLINE") {
 	  	int y;
 	  	ss >> y;
-		int extra;
+		string extra; //variable to check for incorrect command
 	  	if(ss.fail() || y < 1 || ss >> extra)
 	  	{
 	  		output << "Error - incorrect command" << endl;
