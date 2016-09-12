@@ -1,1 +1,39 @@
-asda
+Problem 1
+a. Unmodified since you simply cloned the repo
+b. fun_problem.txt is Untracked since it's a new file
+   README is Modified since you edited it after your last commit
+c. Staged
+d. Modified since you edited them after committing 
+e. README is Staged since you used git add
+   fun_problem.txt is Umodified since you used git checkout to revert changes. 
+   fun_problem.txt is empty since the changes from part d are reverted by using git checkout
+f. Modified. Even though README was Staged, adding an changes to it in this status brings it back to the Modified status
+
+Problem 3
+a. Inner for loop contents: Θ(1)
+   Inner for loop: since summation is 1+2+4+8+16...i-1 we get Θ(2^(log(i))) which equals theta(i) 
+   If statement: Θ(1)
+   Outer for loop: summation of Θ(i) from i=0 to n-1 which is Θ(n^2)
+   So the answer is Θ(n^2) 
+b. Innermost for loop: Θ(n-j) since it's the summation of Θ(1) from k=j to n-1. Its time is therefore dependent on both n and j
+   Next Inner for loop: summation of Θ(n-j) from j=0 to n-1 which is the summation of Θ(n) from j=0 to n-1 minus the summation of Θ(j) from j=0 to n-1. Or 
+c.
+
+Problem 4
+1. A Map of zipcodes(int) to voting statistics(double) for each zipcode. The zipcodes can serve as the key and the voting statistics will be the values. This data type allows you to pass a given zipcode into a "get function" to return the voting statistics for said zipcode.
+2. A Set of student names(string) who solved the problem. Order doesn't matter in this case which is why I chose a set. You can also use the function "bool contains(name)" to search if a given student is in this set.
+3. A Map of pokedex indices(int) to pokemon names(string) for indices 1 to 151. A map allows for an injective function where each key only has one value. You can also use the function "string get(index)" to find the pokemon associated with a given index.
+4. A Map of structs consisting of a movie name (string) and the year it was released (int) which point to a list of movie reviews(strings). The structs whould be named Movie and have elements name and year. To access the reviews you would use "get" function and pass Movie.name and Movie.year as the keys/parameters to access the list of reviews for each movie.
+
+Problem 5
+This C++ code will return the previous linked list linked in reverse order: 5 will point to 4, 4 will point to 3, 3 will point to 2, 2 will point to 1, and 1 will point to NULL. funcA first recurses down the tree to find the last item in the inputed linked list. This node becomes the "out" variable in the function. The program then will begin to recurse back up the funcA calls. When it reaches the next call it will call funcB which sets in->next->next to in (i.e. Node 5 now points to 4). in->next is then set to NULL in the funcA call, this is in preparation for another series of funcB calls. This process repeats until we reach the funcA call on the first node of the inputed list. Here funcB will continue to call itself until it finds a Node which points to NULL. It then sets this node to point to in (in this case Node 1). Then it returns back up to the funcA call where Node 1 is set to point to NULL. Now the entire list's order of pointing has been successfully reveresed.
+
+
+
+
+
+
+
+
+ 
+   
