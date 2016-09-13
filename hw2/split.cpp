@@ -2,6 +2,11 @@
 
 using namespace std;
 
+struct Node {
+    int value;
+    Node *next;
+};
+
 void split(Node*& in, Node*& odds, Node*& evens) {
 	if(in == NULL) { //base case 
 		in = NULL; //in set to NULL
