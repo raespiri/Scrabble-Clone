@@ -15,9 +15,17 @@ a. Inner for loop contents: Θ(1)
    If statement: Θ(1)
    Outer for loop: summation of Θ(i) from i=0 to n-1 which is Θ(n^2)
    So the answer is Θ(n^2) 
-b. Innermost for loop: Θ(n-j) since it's the summation of Θ(1) from k=j to n-1. Its time is therefore dependent on both n and j
-   Next Inner for loop: summation of Θ(n-j) from j=0 to n-1 which is the summation of Θ(n) from j=0 to n-1 minus the summation of Θ(j) from j=0 to n-1. Or 
-c.
+b. Innermost for loop: Θ(n-j) in the worst case since it's the summation of Θ(1) from k=j to n-1.
+   If statement: occurs n/i times so
+   Next Inner for loop: summation of Θ(n-n/i) from j=0 to n-1 since you have to account for when the if statement is true.
+   Outer for loop: is a summation of Θ(n-n/i) * Θ(n-j) from i=1 to log(n) since i is being doubled each time the loop runs.
+                   This summation simplifies to the summation of Θ(n^2) from i=1 to log(n) since n^2 is the biggest term.
+   This makes the summation equal to Θ(n^2*log(n)), the answer
+c. for loop: runs Θ(n) times
+   inner for loop of while loop: runs from i to 2^(n-i) since curr->data size in terms of n is 2^n (due to the bit shift operator curr->data is in base 2). We subtract i from the exponent since curr->data is divided by 2^(i) each time the loop runs. This makes it Θ(2^n) since we're looking at worst case.
+   while loop: runs while curr does not equal NULL so Θ(n) times
+   This makes the total run time of the function Θ(n*2^n);
+d.  
 
 Problem 4
 1. A Map of zipcodes(int) to voting statistics(double) for each zipcode. The zipcodes can serve as the key and the voting statistics will be the values. This data type allows you to pass a given zipcode into a "get function" to return the voting statistics for said zipcode.
