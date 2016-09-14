@@ -93,28 +93,28 @@ void LListString::insert(int pos, const std::string& val)
 
 void LListString::remove(int pos)
 {
-  if(pos == 0 && size() == 1) {
+  if(pos == 0 && size() == 1) { //removing from first node of list with size 1
     Item *toRemove = getNodeAt(pos);
     delete toRemove;
     head_ = NULL;
     tail_ = NULL;
     size_--; //decrement size
   }
-  else if(pos == 0) {
+  else if(pos == 0) { //removing from first node of list with more than one node
     Item *toRemove = getNodeAt(pos);
     head_ = toRemove->next;
     toRemove->next->prev = NULL;
     delete toRemove;
     size_--; //decrement size
   }
-  else if(pos == size_ - 1) {
+  else if(pos == size_ - 1) { //removing from last node of list
     Item *toRemove = getNodeAt(pos);
     toRemove->prev->next = NULL;
     tail_ = toRemove->prev;
     delete toRemove;
     size_--; //decrement size
   }
-  else if(pos > 0 && pos < size_ - 1) {
+  else if(pos > 0 && pos < size_ - 1) { //removing from middle of the list
     Item *toRemove = getNodeAt(pos);
     toRemove->prev->next = toRemove->next;
     toRemove->next->prev = toRemove->prev;
