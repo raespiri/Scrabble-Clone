@@ -39,10 +39,11 @@ void LListString::insert(int pos, const std::string& val)
 {
   if(empty()) { //insertion into an empty list
     Item *newItem = new Item; 
-    head_ = newItem; 
-    tail_ = newItem;
-    newItem->val = val;
-    newItem->prev = NULL;
+    head_ = newItem; //update head
+    tail_ = newItem; //update tail
+    newItem->val = val; 
+    //update new item pointers 
+    newItem->prev = NULL; 
     newItem->next = NULL;
     size_++; //increment size
   }
@@ -50,8 +51,10 @@ void LListString::insert(int pos, const std::string& val)
     Item *newItem = new Item;
     newItem->val = val;
     Item *old = getNodeAt(pos);
+    //update new item pointers 
     newItem->next = old;
     newItem->prev = old->prev;
+    //update old item pointers 
     old->prev->next = newItem;
     old->prev = newItem;
     size_++; //increment size
@@ -60,32 +63,38 @@ void LListString::insert(int pos, const std::string& val)
     Item *newItem = new Item;
     newItem->val = val;
     Item *old = getNodeAt(pos);
+    //update new item pointers 
     newItem->next = old;
     newItem->prev = NULL;
+    //update old item pointers 
     old->prev = newItem;
-    head_ = newItem;
+    head_ = newItem; //update head to new item
     size_++; //increment size
   }
   else if(pos == size_-1){ //insertion at last node
     Item *newItem = new Item;
     newItem->val = val;
     Item *old = getNodeAt(pos);
+    //update new item pointers 
     newItem->next = old;
     newItem->prev = old->prev;
+    //update old item pointers 
     old->prev->next = newItem;
     old->prev = newItem;
     old->next = NULL;
-    tail_ = old;
+    tail_ = old; //make sure tail still points to old item
     size_++; //increment size
   }
   else if(pos == size_) { //insertion to add new node to the back of list
     Item *newItem = new Item;
     newItem->val = val;
     Item *old = getNodeAt(pos-1);
+    //update new item pointers 
     newItem->next = NULL;
     newItem->prev = old;
+    //update old item pointers 
     old->next = newItem;
-    tail_ = newItem;
+    tail_ = newItem; //update tail to point to new item
     size_++; //increment size
   }
    
@@ -177,4 +186,5 @@ LListString::Item* LListString::getNodeAt(int pos) const
       temp = temp->next; //else move to next node
     }
   }
+  throw std::invalid_argument("could not locate node at given pos") //if "i" never equalled pos raise this error
 }

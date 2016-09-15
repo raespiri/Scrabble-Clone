@@ -37,7 +37,20 @@ Problem 4
 4. A Map of structs consisting of a movie name (string) and the year it was released (int) which point to a list of movie reviews(strings). The structs whould be named Movie and have elements name and year. To access the reviews you would use "get" function and pass Movie.name and Movie.year as the keys/parameters to access the list of reviews for each movie.
 
 Problem 5
-This C++ code will return the previous linked list linked in reverse order: 5 will point to 4, 4 will point to 3, 3 will point to 2, 2 will point to 1, and 1 will point to NULL. funcA first recurses down the tree to find the last item in the inputed linked list. This node becomes the "out" variable in the function. The program then will begin to recurse back up the funcA calls. When it reaches the next call it will call funcB which sets in->next->next to in (i.e. Node 5 now points to 4). in->next is then set to NULL in the funcA call, this is in preparation for another series of funcB calls. This process repeats until we reach the funcA call on the first node of the inputed list. Here funcB will continue to call itself until it finds a Node which points to NULL. It then sets this node to point to in (in this case Node 1). Then it returns back up to the funcA call where Node 1 is set to point to NULL. Now the entire list's order of pointing has been successfully reveresed.
+This C++ code will return the previous linked list linked in reverse order: 
+5 will point to 4, 4 will point to 3, 3 will point to 2, 2 will point to 1, 
+and 1 will point to NULL. funcA first recurses down the tree to find the last 
+item in the inputed linked list. This node becomes the "out" variable in the 
+function. The program then will begin to recurse back up the funcA calls. 
+When it reaches the next call it will call funcB which sets in->next->next 
+to in (i.e. Node 5 now points to 4). in->next is then set to NULL in the 
+funcA call, this is in preparation for another series of funcB calls. This 
+process repeats until we reach the funcA call on the first node of the 
+inputed list. Here funcB will continue to call itself until it finds a Node
+which points to NULL. It then sets this node to point to in (in this case 
+Node 1). Then it returns back up to the funcA call where Node 1 is set to 
+point to NULL. Now the entire list's order of pointing has been successfully 
+reveresed.
 
 
 
