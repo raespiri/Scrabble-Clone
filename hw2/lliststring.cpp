@@ -186,5 +186,6 @@ LListString::Item* LListString::getNodeAt(int pos) const
       temp = temp->next; //else move to next node
     }
   }
-  throw std::invalid_argument("could not locate node at given pos") //if "i" never equalled pos raise this error
+  //if "i" never equalled pos raise this error
+  throw std::invalid_argument("could not locate node at given pos"); 
 }
