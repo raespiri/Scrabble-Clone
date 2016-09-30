@@ -8,4 +8,6 @@ To compile stringparser.cpp use "g++ -g -Wall stringparser.cpp stackstring.cpp l
 
 To run "./stringparser hw3_destroyer.in output.txt"
 
-To run llisttest.cpp, type: "make llisttest"
+To compile llisttest.cpp, type: "make llisttest"
+
+To run "./llisttest"
