@@ -1,0 +1,44 @@
+Problem 2
+   Yes it is. For instance say you have stack1. Then you push a,b,c to it in
+   that order. Making stack1: a,b,c where a is oldest element in it and c is
+   the newest. Next pop from stack1 until empty and push each element to stack2.
+   pop() removes the newsest element so c is removed and pushed first, then b, 
+   and then a. Making stack2: c,b,a. Here we can pop from stack2 with the
+   elements from stack1 in reverse order. This way we pop the oldest element
+   first, as should be in a queue implementation. 
+a. 1. stack1: 1
+      stack2: empty
+   2. stack1: 1,2 (2 is top of stack1)
+      stack2: empty
+   3. stack1: empty
+      stack2: 2
+   4. stack1: 3
+      stack2: 2
+   5. stack1: 3,4 (4 is top of stack1)
+      stack2: 2
+   6. stack1: 3,4 (4 is top of stack1)
+      stack2: empty
+   7. stack1: 3,4,5 (5 is top of stack1)
+      stack2: empty
+   END CONTENTS OF STACK1 AND STACK2
+   8. stack1: 3,4,5,6 (6 is top of stack1, 3 is bottom)
+      stack2: empty
+b. enqueue(x): Θ(1)
+   dequeue(x): Θ(n) where n is the number of elements in stack1
+c. enqueue(x): Θ(1)
+   dequeue(x): Θ(1) since the worst case only occurs stack2 is empty (Θ(n))
+               Otherwise if stack2 isn't empty you pop() from stack2 which 
+               is Θ(1) the amortized runtime. 
+d. Worst-Case 
+   enqueue(x): Θ(1)
+   dequeue(x): Θ(n^2) since worst-case you have to loop through all n elements 
+               of stack1 and call pop() on each. Each iteration will have a 
+               runtime of Θ(n) due to pop(). So total and worst-case runtime
+               is Θ(n^2)
+   Amortized
+   enqueue(x): Θ(1)
+   dequeue(x): Θ(n) since even if the list isn't empty you still will call 
+               pop() on the top element, which will have a runtime of Θ(n) as 
+               described by part d. 
+    
+ 
