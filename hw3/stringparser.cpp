@@ -26,7 +26,11 @@ int main(int argc, char* argv[])
   		int closed_count = 0; //count for open parentheses 
   		int char_count = 0; //count to ensure at least one char is present
   		int expressionLen = expression.length();
+  		bool operator_pres = false; //flag to check if operator is present
   		for(int i = 0; i < expressionLen; i++) { //loop through entire expression
+  			if(expression[i] == '+' || expression[i] == '-') {
+  				operator_pres = true;
+  			}
   			if(expression[i] == '(') {
   				open_count++; //when ( is found update count
   			}
@@ -58,6 +62,9 @@ int main(int argc, char* argv[])
   		if(char_count == 0) { //no lowercase characters found in expression
   			malformed = true;
   		} 
+  		if(open_count == 0 && closed_count == 0 && operator_pres) {
+  			malformed = true;
+  		}
   		StackString stack; //declaring stack
   		stringstream ss; 
   		ss << expression;
