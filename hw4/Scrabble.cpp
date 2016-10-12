@@ -161,6 +161,11 @@ int main (int nargs, char **args)
 			}
 		}	
 
+		//cleaning up playerlist vector
+		for (unsigned int j = 0; j < playerList.size(); ++j) {
+			delete playerList[j];
+		}
+
 		return 0;
 	}
 	catch (invalid_argument & e)

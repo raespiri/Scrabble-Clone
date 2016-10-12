@@ -10,7 +10,10 @@ Player::Player(string name) {
 }
 
 Player::~Player() {
-	//implement this
+	set<Tile*>::iterator it; //iterator
+	for(it = _hand.begin(); it != _hand.end(); ++it) {
+		delete *it;
+	}
 }
 
 void Player::setScore(int score) {
@@ -506,6 +509,11 @@ void Player::movePlace(string dir, int row, int col, string tiles_to_place, Boar
   	else if(triple_word == true) { //if triple word flag is true
   		score = score*3;
   	}
+
+  	//cleaning up word vector
+	for (unsigned int h = 0; h < word.size(); ++h) {
+		delete word[h];
+	}
 
   	setScore(getScore()+score); //adding to player's score
 
