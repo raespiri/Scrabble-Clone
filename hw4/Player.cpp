@@ -509,7 +509,6 @@ void Player::movePlace(string dir, int row, int col, string tiles_to_place, Boar
 
   	setScore(getScore()+score); //adding to player's score
 
-  	
 }
 
 void Player::setHand(set<Tile*> tiles) {
