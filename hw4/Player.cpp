@@ -252,25 +252,29 @@ void Player::movePlace(string dir, int row, int col, string tiles_to_place, Boar
 	if(count > 0) {
 		if(dir == "-") {
 			for(int e = 0; e < num_tiles; e++) {
-				if(isupper((board.getSquare(row+e, col))[0])) {
-					adjacent_word = true;
-					break;
-				}
-				else if(isupper((board.getSquare(row-e, col))[0])) {
-					adjacent_word = true;
-					break;
+				if(row+e < board.getRows() || row-e >= 0) { 
+					if(isupper((board.getSquare(row+e, col))[0])) {
+						adjacent_word = true;
+						break;
+					}
+					else if(isupper((board.getSquare(row-e, col))[0])) {
+						adjacent_word = true;
+						break;
+					}
 				}
 			}
 		}
 		else if(dir == "|") {
 			for(int e = 0; e < num_tiles; e++) {
-				if(isupper((board.getSquare(row, col+e))[0])) {
-					adjacent_word = true;
-					break;
-				}
-				else if(isupper((board.getSquare(row, col+e))[0])) {
-					adjacent_word = true;
-					break;
+				if(col+e < board.getCols() || col-e >= 0) { 
+					if(isupper((board.getSquare(row, col+e))[0])) {
+						adjacent_word = true;
+						break;
+					}
+					else if(isupper((board.getSquare(row, col+e))[0])) {
+						adjacent_word = true;
+						break;
+					}
 				}
 			}
 		}
