@@ -40,9 +40,29 @@ Scrabble::Scrabble(QApplication *app, Board* scrabble_board, Bag* scrabble_bag, 
 		board[i] = new QPushButton*[cols]; 
 		for (int j = 0; j < cols; j++) { 
 			board[i][j] = new QPushButton;
-			board[i][j]->setStyleSheet("border-style: groove; border-width: 2px"); //adding shape to the board squares
+			board[i][j]->setStyleSheet("border-style: inset; border-width: 2px; border-width: 6px"); //adding shape to the board squares
 			board[i][j]->setFont(handFont);
 			string str = scrabble_board->getSquare(i,j); //getting board square string from board.h
+			if(str == ".") { //converting dots to blank spaces
+				str = " ";
+				board[i][j]->setStyleSheet("background-color: white");
+			}
+			else if(str == "d") {
+				str = "2W";
+				board[i][j]->setStyleSheet("background-color: red");
+			}
+			else if(str == "t") {
+				str = "3W";
+				board[i][j]->setStyleSheet("background-color: magenta");
+			}
+			else if(str == "2") {
+				str = "2L";
+				board[i][j]->setStyleSheet("background-color: cyan");
+			}
+			else if(str == "3") {
+				str = "3L";
+				board[i][j]->setStyleSheet("background-color: darkCyan");
+			}
 			QString qstr = QString::fromStdString(str); //converting to qstring
 			board[i][j]->setText(qstr); //updating display board squares to show point values
 			g->addWidget(board[i][j],i+1,j+1); 
@@ -97,7 +117,7 @@ void Scrabble::act() {
 	if(bag_pointer->tilesRemaining() < 1 && emptyHand(playerList)) { //if there are no more tiles and playerlist it empty
 		return;
 	}
-	if(moves->currentText() == "Exchange" && (QPushButton*) QObject::sender() == play) { //object that emitted the signal was the play button
+	if(moves->currentText() == "Exchange" && (QPushButton*) QObject::sender() == play && tiles->text() != "") { //object that emitted the signal was the play button
 		QString qstr = tiles->text(); // grabbing tiles from input field
 		string str = qstr.toStdString(); // converting to str
 		playerList[curr_player]->moveExchange(str, *bag_pointer); //calling exchange function
@@ -107,7 +127,6 @@ void Scrabble::act() {
 			msgBox.setWindowTitle("Error");
 			msgBox.setText("At least one of the tiles you wish to exchange is not in your hand");
 			msgBox.exec(); //show popup
-			return;
 		}
 		else { //else no error
 			int size = (int) playerList.size();
@@ -157,7 +176,7 @@ void Scrabble::act() {
 
 		return;
 	}
-	else if(moves->currentText() == "Place Horizontal" && (QPushButton*) QObject::sender() != play) { //object that emitted the signal wasn't the play button
+	else if(moves->currentText() == "Place Horizontal" && (QPushButton*) QObject::sender() != play && tiles->text() != "") { //object that emitted the signal wasn't the play button
 		QString qstr = tiles->text(); // grabbing tiles from input field
 		string str_tiles = qstr.toStdString(); // converting to str
 
@@ -181,7 +200,6 @@ void Scrabble::act() {
 			msgBox.setWindowTitle("Error");
 			msgBox.setText(errors[error-1]); //call correct error index
 			msgBox.exec(); //show popup
-			return;
 		}
 		else {
 			updateQtBoard(board_pointer);
@@ -219,7 +237,7 @@ void Scrabble::act() {
 			return;
 		}
 	}
-	else if(moves->currentText() == "Place Vertical" && (QPushButton*) QObject::sender() != play) { //object that emitted the signal wasn't the play button
+	else if(moves->currentText() == "Place Vertical" && (QPushButton*) QObject::sender() != play && tiles->text() != "") { //object that emitted the signal wasn't the play button
 		QString qstr = tiles->text(); // grabbing tiles from input field
 		string str_tiles = qstr.toStdString(); // converting to str
 
@@ -243,7 +261,6 @@ void Scrabble::act() {
 			msgBox.setWindowTitle("Error");
 			msgBox.setText(errors[error-1]); //call correct error index
 			msgBox.exec(); //show popup
-			return;
 		}
 		else {
 			updateQtBoard(board_pointer);
@@ -359,6 +376,29 @@ void Scrabble::updateQtBoard(Board* scrabbleBoard) {
 	for (int i = 0; i < _rows; i++) { 
 		for (int j = 0; j < _cols; j++) { 
 			string str = scrabbleBoard->getSquare(i,j); //getting board square string from board.h
+			if(str == ".") { //converting dots to blank spaces
+				str = " ";
+				board[i][j]->setStyleSheet("background-color: white");
+			}
+			else if(str == "d") {
+				str = "2W";
+				board[i][j]->setStyleSheet("background-color: red");
+			}
+			else if(str == "t") {
+				str = "3W";
+				board[i][j]->setStyleSheet("background-color: magenta");
+			}
+			else if(str == "2") {
+				str = "2L";
+				board[i][j]->setStyleSheet("background-color: cyan");
+			}
+			else if(str == "3") {
+				str = "3L";
+				board[i][j]->setStyleSheet("background-color: darkCyan");
+			}
+			else {
+				board[i][j]->setStyleSheet("background-color: beige");
+			}
 			QString qstr = QString::fromStdString(str); //converting to qstring
 			board[i][j]->setText(qstr); //updating display board squares to show point values
 		} 
