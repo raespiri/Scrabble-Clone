@@ -32,6 +32,7 @@ Scrabble::Scrabble(QApplication *app, Board* scrabble_board, Bag* scrabble_bag, 
 	hand = new QLabel(""); 	
 	QFont handFont;
     handFont.setBold(true);
+    handFont.setPointSize(14);
     hand->setFont(handFont);
 
 	g = new QGridLayout; 
@@ -322,8 +323,9 @@ void Scrabble::setHandLabel(int pos) {
 
 void Scrabble::setPlayerLabel(int pos) {
 	stringstream ss;
+	ss << "It's ";
 	ss << playerList[pos]->getName(); //grabbing player's name from player vector
-	ss << "'s hand:";
+	ss << "'s turn - Current Hand:";
 	string str = ss.str();
 	QString temp = QString::fromStdString(str); //converting str to qstr
 	playerLabel->setText(temp);
