@@ -4,8 +4,9 @@ USC ID: 9340109175
 
 Email: raespiri@usc.edu
 
-To compile type "make"
-
+To compile type "qmake -project"
+                "qmake"
+                "make"
 To run type "./hw5 config.txt"
 
 HOW MY SCRABBLE IS IMPLEMENTED
