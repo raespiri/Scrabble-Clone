@@ -20,5 +20,6 @@ would be 10. This in turn will affect my AI's decisions
 
 *NOTE: My scrabble codebase does have some bugs like accounting for forming
 2 or more words with one "place" move, thus my AI's may make incorrect 
-decisions due to this. However I believe my AI logic to be correct.
+decisions due to this (like occasionally placing words in incorrect spots).
+However I believe my AI and backtracing logic to be correct.
 
