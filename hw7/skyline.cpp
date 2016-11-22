@@ -109,14 +109,14 @@ int main(int argc, char* argv[]) {
 
   					//found a range that fully contains the input range
   					if((*it).first.getStart() < x && y < (*it).first.getEnd()) {
-  						Floors temp(y+1, (*it).first.getEnd()); //create a new Floors key for second half
+  						Floors temp2(y+1, (*it).first.getEnd()); //create a new Floors key for second half
   						(*it).first.setEnd(x-1); //update end range of first half
-  						myMap.insert(make_pair(temp, (*it).second)); //insert node with new floors key
+  						myMap.insert(make_pair(temp2, (*it).second)); //insert node with new floors key
   						break;
   					}
 				}
-				Floors temp(x, y); //create a new Floors key for the inputed value
-  				myMap.insert(make_pair(temp, c)); //insert node with new floors key and inputed color
+				Floors temp3(x, y); //create a new Floors key for the inputed value
+  				myMap.insert(make_pair(temp3, c)); //insert node with new floors key and inputed color
 		  	}
 	  	}
 	  	else if(command == "COLOR") {
