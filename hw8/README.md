@@ -14,6 +14,7 @@ Which size of input cases did you use?
 For each of the three collision resolution approaches (linear probing, 
 quadratic probing, double hashing), report how long each of your input cases 
 took. How long did it take per operation?
+*NOTE ALL THESE TIMES ARE RAN IN DEBUG MODE*
 ~100 words
 linear: 0.000404s
 quadratic: 0.000411s
