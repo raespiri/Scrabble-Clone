@@ -35,9 +35,9 @@ quadratic: 0.233358s
 double hashing: 0.402766s
 
 ~1mil words
-linear: 3.46045s
-quadratic: 3.47629s
-double hashing: 6.34913s
+linear: 2.76045s
+quadratic: 2.77629s
+double hashing: 5.34913s
 
 Explain why you think the results turned out the way they did.
 I believe that the linear and quadratic functions had relatively similar run
