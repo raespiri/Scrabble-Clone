@@ -215,7 +215,9 @@ int Hashtable::count(const std::string& k) const {
 
 void Hashtable::reportAll(std::ostream& out) const {
 	for(int i = 0; i < size; i++) { 
-		out << hashArr[i].first << " " << hashArr[i].second << "\n";
+		if(hashArr[i].first != "#") { //print non-empty indices
+			out << hashArr[i].first << " " << hashArr[i].second << "\n";
+		}
 	} 
 }
 
