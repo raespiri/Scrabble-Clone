@@ -56,7 +56,7 @@ int main(int argc, char* argv[]) {
   	// START CLOCK
     start = clock();
 
-    for(int j = 0; j <= r; j++) { //loop program for determined number of repeats
+    for(int j = 0; j < r; j++) { //loop program for determined number of repeats
     	Hashtable htable(debug, x); //create a new hashtable
 
     	for(int y = 0; y < (int) words.size(); y++) { //loop through vector of words

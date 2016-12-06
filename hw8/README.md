@@ -9,11 +9,12 @@ To compile Counting.cpp type "make counting"
 To run type "./counting [input] [output] x d r"
 
 Which size of input cases did you use?
-~21k words
+~100, ~1.2k, ~11k, ~119k, and ~1mil words
 
 For each of the three collision resolution approaches (linear probing, 
 quadratic probing, double hashing), report how long each of your input cases 
 took. How long did it take per operation?
+*NOTE ALL THESE TRIALS WERE RAN IN DEBUG MODE*
 ~100 words
 linear: 0.000404s
 quadratic: 0.000411s
