@@ -4,8 +4,8 @@ C11 = -std=c++11
 
 all: counting
 
-counting: Counting.cpp Hashtable.cpp
-	$(CC) $(CPPFLAGS) $(C11) Counting.cpp Hashtable.cpp -o counting
+counting: counting.cpp Hashtable.cpp
+	$(CC) $(CPPFLAGS) $(C11) counting.cpp Hashtable.cpp -o counting
 
 .PHONY: clean
 
