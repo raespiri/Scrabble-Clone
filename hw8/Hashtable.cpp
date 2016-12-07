@@ -261,14 +261,14 @@ int Hashtable::hash(const std::string& k) const {
 	}
 
 	int w[5] = { }; //array of w1, w2, w3, w4, w5
-	w[1] = powerHelper(letters[0], letters[1], letters[2], letters[3], letters[4], letters[5]); 
-	w[2] = powerHelper(letters[6], letters[7], letters[8], letters[9], letters[10], letters[11]);
-	w[3] = powerHelper(letters[12], letters[13], letters[14], letters[15], letters[16], letters[17]);
-	w[4] = powerHelper(letters[18], letters[19], letters[20], letters[21], letters[22], letters[23]);
-	w[5] = powerHelper(letters[24], letters[25], letters[26], letters[27], letters[28], letters[29]);
+	w[0] = powerHelper(letters[0], letters[1], letters[2], letters[3], letters[4], letters[5]); 
+	w[1] = powerHelper(letters[6], letters[7], letters[8], letters[9], letters[10], letters[11]);
+	w[2] = powerHelper(letters[12], letters[13], letters[14], letters[15], letters[16], letters[17]);
+	w[3] = powerHelper(letters[18], letters[19], letters[20], letters[21], letters[22], letters[23]);
+	w[4] = powerHelper(letters[24], letters[25], letters[26], letters[27], letters[28], letters[29]);
 
 	//hashing the word
-	long long temp = r1*w[1] + r2*w[2] + r3*w[3] + r4*w[4] + r5*w[5];
+	long long temp = r1*w[0] + r2*w[1] + r3*w[2] + r4*w[3] + r5*w[4];
 	temp = temp % size;
 
 	return (int) temp;
@@ -293,14 +293,14 @@ int Hashtable::hash2(const std::string& k) const {
 	}
 
 	int w[5] = { }; //array of w1, w2, w3, w4, w5
-	w[1] = powerHelper(letters[0], letters[1], letters[2], letters[3], letters[4], letters[5]); 
-	w[2] = powerHelper(letters[6], letters[7], letters[8], letters[9], letters[10], letters[11]);
-	w[3] = powerHelper(letters[12], letters[13], letters[14], letters[15], letters[16], letters[17]);
-	w[4] = powerHelper(letters[18], letters[19], letters[20], letters[21], letters[22], letters[23]);
-	w[5] = powerHelper(letters[24], letters[25], letters[26], letters[27], letters[28], letters[29]);
+	w[0] = powerHelper(letters[0], letters[1], letters[2], letters[3], letters[4], letters[5]); 
+	w[1] = powerHelper(letters[6], letters[7], letters[8], letters[9], letters[10], letters[11]);
+	w[2] = powerHelper(letters[12], letters[13], letters[14], letters[15], letters[16], letters[17]);
+	w[3] = powerHelper(letters[18], letters[19], letters[20], letters[21], letters[22], letters[23]);
+	w[4] = powerHelper(letters[24], letters[25], letters[26], letters[27], letters[28], letters[29]);
 
 	//hashing the word
-	long long temp = w[1] + w[2] + w[3] + w[4] + w[5];
+	long long temp = w[0] + w[1] + w[2] + w[3] + w[4];
 	
 	int p; //prime number to be used in second hash function
 	for(int x = 0; x < 28; x++) {
