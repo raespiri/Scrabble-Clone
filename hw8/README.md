@@ -9,36 +9,36 @@ To compile Counting.cpp type "make counting"
 To run type "./counting [input] [output] x d r"
 
 Which size of input cases did you use?
-~100, ~1.2k, ~11k, ~119k, and ~1mil words
+~100, ~1.2k, ~11k, ~119k, and ~850k words
 
 For each of the three collision resolution approaches (linear probing, 
 quadratic probing, double hashing), report how long each of your input cases 
 took. How long did it take per operation?
 *NOTE ALL THESE TRIALS WERE RAN IN DEBUG MODE*
 ~100 words
-linear: 0.000404s
-quadratic: 0.000411s
-double hashing: 0.000806s
+linear: 0.00000404s
+quadratic: 0.00000411s
+double hashing: 0.00000806s
 
 ~1.2k words
-linear: 0.004221s
-quadratic: 0.004797s
-double hashing: 0.009538s
+linear: 0.0000035175s
+quadratic: 0.0000039975s
+double hashing: 7.94833333333333 E-06s
 
 ~11k words
-linear: 0.029737s
-quadratic: 0.030406s
-double hashing: 0.058133s
+linear: 2.70336363636363 E-06s
+quadratic: 2.76418181818181 E-06s
+double hashing: 5.28481818181818 E-06s
 
 ~119k words
-linear: 0.226678s
-quadratic: 0.233358s
-double hashing: 0.402766s
+linear: 1.90485714285714 E-06s
+quadratic: 1.96099159663865 E-06s
+double hashing: 3.38458823529411 E-06s
 
-~1mil words
-linear: 3.46045s
-quadratic: 3.47629s
-double hashing: 6.34913s
+~850k words
+linear: 5.59387058823529 E-07s
+quadratic: 5.6479294117647 E-07s
+double hashing: 1.07535764705882 E-06s
 
 Explain why you think the results turned out the way they did.
 I believe that the linear and quadratic functions had relatively similar run
@@ -47,7 +47,9 @@ was incremented by a factor or i or i^2. On the otherhand the double hashing
 technique roughly took twice as long as the linear and quadratic techniques.
 This makes sense as two hash functions were used in this method which 
 effectively doubled the runntime in cases where a key needed to by hashed
-twice.
+twice. Further, I believe that the time per operation decreased as inputs got
+larger because this also meant that our hashtable got larger meaning there
+was less of a chance for collisions.
 
 How do you think the running time would compare to each version of probing 
 if you were to implement your Map in the following fashions? Briefly justify 
